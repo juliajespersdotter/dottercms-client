@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 
@@ -10,7 +10,7 @@ function App() {
 	}
 
 	useEffect(() => {
-		const data = get('http://localhost:3000/api')
+		get('/api')
 	}, [])
 	return (
 		<div className='App'>
