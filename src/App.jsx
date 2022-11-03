@@ -10,7 +10,7 @@ function App() {
 	)
 	return (
 		<div className='App'>
-			<h2>Welcome to my app</h2>
+			<h1>Welcome to my app</h1>
 
 			{isError && <p>An error has occurred</p>}
 
@@ -19,7 +19,7 @@ function App() {
 					!isLoading &&
 					data.map(post => (
 						<div key={post.id}>
-							<h1>{post.title}</h1>
+							<h2>{post.title}</h2>
 							<p>{post.content}</p>
 						</div>
 					))}
