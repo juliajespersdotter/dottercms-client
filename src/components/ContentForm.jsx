@@ -1,8 +1,11 @@
 import { useForm } from 'react-hook-form'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import DotterDB_API from '../services/DotterDB_API'
+import { useQueryClient } from 'react-query'
 
 const ContentForm = () => {
+	const queryClient = useQueryClient()
 	const {
 		register,
 		handleSubmit,
@@ -10,8 +13,11 @@ const ContentForm = () => {
 		formState: { errors },
 	} = useForm()
 
-	const onSubmit = data => {
-		console.log(data)
+	const onSubmit = async data => {
+		if (data) {
+			await DotterDB_API.publishPost(data)
+			queryClient.invalidateQueries('posts')
+		}
 	}
 
 	return (

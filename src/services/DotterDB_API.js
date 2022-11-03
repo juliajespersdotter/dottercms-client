@@ -19,7 +19,8 @@ const showPosts = () => {
 }
 
 const publishPost = async data => {
-	await axios.post('publish', data)
+	console.log(data)
+	await axios.post(`${BASE_URL}/publish`, data)
 }
 
 const exports = {
