@@ -15,7 +15,14 @@ const ContentForm = () => {
 
 	const onSubmit = async data => {
 		if (data) {
-			await DotterDB_API.publishPost(data)
+			const created_at = new Date().toLocaleString()
+			console.log(created_at)
+			const postInfo = {
+				title: data.title,
+				content: data.content,
+				created_at: created_at,
+			}
+			await DotterDB_API.publishPost(postInfo)
 			queryClient.invalidateQueries('posts')
 		}
 	}

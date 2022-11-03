@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import Container from 'react-bootstrap/Container'
 import DotterDB_API from './services/DotterDB_API'
 import ContentForm from './components/ContentForm'
+import Post from './components/Post'
 
 function App() {
 	const { isLoading, isError, data } = useQuery(
@@ -20,12 +20,7 @@ function App() {
 			<div>
 				{data &&
 					!isLoading &&
-					data.map(post => (
-						<div key={post.id}>
-							<h2>{post.title}</h2>
-							<p>{post.content}</p>
-						</div>
-					))}
+					data.map(post => <Post key={post.id} post={post} />)}
 			</div>
 		</Container>
 	)

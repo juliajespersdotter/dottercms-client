@@ -1,0 +1,18 @@
+import { useState, useEffect } from 'react'
+import Card from 'react-bootstrap/Card'
+
+const Post = ({ post }) => {
+	return (
+		<Card className='mb-5 p-3'>
+			<Card.Title>{post.title}</Card.Title>
+			<Card.Subtitle className='text-muted'>
+				{post.created_at && new Date(post.created_at).toLocaleString()}
+			</Card.Subtitle>
+			<Card.Body>
+				<Card.Text>{post.content}</Card.Text>
+			</Card.Body>
+		</Card>
+	)
+}
+
+export default Post
