@@ -10,6 +10,21 @@ const BASE_URL = 'http://localhost:3000'
  */
 const get = async (endpoint, options) => {
 	const res = await axios.get(endpoint, options)
-
+	console.log(res.data)
 	return res.data
 }
+
+const showPosts = () => {
+	return get(`${BASE_URL}/posts`)
+}
+
+const publishPost = async data => {
+	await axios.post('publish', data)
+}
+
+const exports = {
+	showPosts,
+	publishPost,
+}
+
+export default exports
