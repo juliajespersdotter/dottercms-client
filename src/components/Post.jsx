@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 const Post = ({ post }) => {
 	return (
@@ -11,6 +13,15 @@ const Post = ({ post }) => {
 			<Card.Body>
 				<Card.Text>{post.content}</Card.Text>
 			</Card.Body>
+
+			<Button
+				variant='dark'
+				className='w-25'
+				as={Link}
+				to={`/${post.id}`}
+			>
+				Edit
+			</Button>
 		</Card>
 	)
 }
