@@ -14,14 +14,9 @@ const Post = ({ post }) => {
 				<Card.Text>{post.content}</Card.Text>
 			</Card.Body>
 
-			<Button
-				variant='dark'
-				className='w-25'
-				as={Link}
-				to={`/${post.id}`}
-			>
+			<Link variant='dark' className='w-25 mt-3' to={`/${post.id}`}>
 				Edit
-			</Button>
+			</Link>
 		</Card>
 	)
 }

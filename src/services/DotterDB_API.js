@@ -17,12 +17,17 @@ const showPosts = () => {
 	return get(`${BASE_URL}/posts`)
 }
 
+const showPost = id => {
+	return get(`${BASE_URL}/${id}`)
+}
+
 const publishPost = async data => {
 	await axios.post(`${BASE_URL}/publish`, data)
 }
 
 const exports = {
 	showPosts,
+	showPost,
 	publishPost,
 }
 
