@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
+import Container from 'react-bootstrap/Container'
 import DotterDB_API from './services/DotterDB_API'
-import './App.css'
+import ContentForm from './components/ContentForm'
 
 function App() {
 	const { isLoading, isError, data } = useQuery(
@@ -9,10 +10,12 @@ function App() {
 		DotterDB_API.showPosts
 	)
 	return (
-		<div className='App'>
+		<Container className='App'>
 			<h1>Welcome to my app</h1>
 
 			{isError && <p>An error has occurred</p>}
+
+			<ContentForm />
 
 			<div>
 				{data &&
@@ -24,7 +27,7 @@ function App() {
 						</div>
 					))}
 			</div>
-		</div>
+		</Container>
 	)
 }
 
