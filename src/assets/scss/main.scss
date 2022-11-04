@@ -1,1 +1,51 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lexend+Deca:wght@100;200;300;400;600&display=swap');
+
+$background-color: #272727;
+$accent-color: #6eeb83;
+$muted-color: hsl(0deg 0% 65%);
+
+body {
+	font-size: 18px;
+	background-color: $background-color;
+	font-family: 'Lexend Deca', sans-serif;
+	font-weight: 200;
+	color: #fff;
+}
+
+h1 {
+	font-family: 'DM Serif Display', serif;
+}
+
+h2 {
+	font-family: 'Lexend Deca', sans-serif;
+	font-weight: 200;
+}
+
+.green {
+	color: $accent-color;
+}
+
+a {
+	text-decoration: none;
+	color: $accent-color;
+}
+
+a:hover {
+	color: $muted-color;
+}
+
+.button-primary {
+	padding: 1rem;
+	width: 12rem;
+	font-size: 1.5rem;
+	background-color: $accent-color;
+	border: none;
+	font-family: 'Lexend Deca', sans-serif;
+	font-weight: 600;
+}
+
+button:hover {
+	background-color: $muted-color;
+	color: #000;
+}

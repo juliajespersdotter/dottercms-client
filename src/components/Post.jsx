@@ -30,13 +30,13 @@ const Post = ({ post }) => {
 				<Card.Text>{post.content}</Card.Text>
 			</Card.Body>
 
-			<Link variant='dark' className='w-25 mt-3' to={`/${post.id}`}>
+			<Link className='w-25 mt-3' to={`/${post.id}`}>
 				View
 			</Link>
 
-			<Button variant='danger' onClick={deleteFunction}>
+			<Link variant='danger' onClick={deleteFunction}>
 				Delete
-			</Button>
+			</Link>
 		</Card>
 	)
 }

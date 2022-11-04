@@ -30,7 +30,6 @@ const updatePost = async (id, data) => {
 }
 
 const deletePost = async id => {
-	console.log(id)
 	await axios.delete(`${BASE_URL}/${id}`)
 }
 
