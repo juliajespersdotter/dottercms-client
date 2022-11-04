@@ -1,9 +1,18 @@
-import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import DotterDB_API from '../services/DotterDB_API'
+import { useQueryClient } from 'react-query'
 
 const Post = ({ post }) => {
+	const queryClient = useQueryClient()
+
+	const deleteFunction = async () => {
+		await DotterDB_API.deletePost(post.id)
+		queryClient.invalidateQueries(['post', post.id])
+		queryClient.invalidateQueries('posts')
+	}
+
 	return (
 		<Card className='mb-5 p-3'>
 			<Card.Title>{post.title}</Card.Title>
@@ -24,6 +33,10 @@ const Post = ({ post }) => {
 			<Link variant='dark' className='w-25 mt-3' to={`/${post.id}`}>
 				View
 			</Link>
+
+			<Button variant='danger' onClick={deleteFunction}>
+				Delete
+			</Button>
 		</Card>
 	)
 }

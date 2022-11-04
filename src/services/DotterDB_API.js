@@ -21,19 +21,25 @@ const showPost = id => {
 	return get(`${BASE_URL}/${id}`)
 }
 
+const publishPost = async data => {
+	await axios.post(`${BASE_URL}/publish`, data)
+}
+
 const updatePost = async (id, data) => {
 	await axios.put(`${BASE_URL}/${id}`, data)
 }
 
-const publishPost = async data => {
-	await axios.post(`${BASE_URL}/publish`, data)
+const deletePost = async id => {
+	console.log(id)
+	await axios.delete(`${BASE_URL}/${id}`)
 }
 
 const exports = {
 	showPosts,
 	showPost,
-	updatePost,
 	publishPost,
+	updatePost,
+	deletePost,
 }
 
 export default exports
