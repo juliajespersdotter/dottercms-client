@@ -7,15 +7,22 @@ const Post = ({ post }) => {
 	return (
 		<Card className='mb-5 p-3'>
 			<Card.Title>{post.title}</Card.Title>
-			<Card.Subtitle className='text-muted'>
-				{post.created_at && new Date(post.created_at).toLocaleString()}
-			</Card.Subtitle>
+			{post.created_at && (
+				<Card.Subtitle className='text-muted'>
+					Created: {new Date(post.created_at).toLocaleString()}
+				</Card.Subtitle>
+			)}
+			{post.updated_at && (
+				<Card.Subtitle className='text-muted'>
+					Updated: {new Date(post.updated_at).toLocaleString()}
+				</Card.Subtitle>
+			)}
 			<Card.Body>
 				<Card.Text>{post.content}</Card.Text>
 			</Card.Body>
 
 			<Link variant='dark' className='w-25 mt-3' to={`/${post.id}`}>
-				Edit
+				View
 			</Link>
 		</Card>
 	)

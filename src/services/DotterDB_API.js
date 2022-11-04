@@ -21,6 +21,10 @@ const showPost = id => {
 	return get(`${BASE_URL}/${id}`)
 }
 
+const updatePost = async (id, data) => {
+	await axios.put(`${BASE_URL}/${id}`, data)
+}
+
 const publishPost = async data => {
 	await axios.post(`${BASE_URL}/publish`, data)
 }
@@ -28,6 +32,7 @@ const publishPost = async data => {
 const exports = {
 	showPosts,
 	showPost,
+	updatePost,
 	publishPost,
 }
 

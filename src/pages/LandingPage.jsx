@@ -3,19 +3,35 @@ import Container from 'react-bootstrap/Container'
 import DotterDB_API from '../services/DotterDB_API'
 import ContentForm from '../components/ContentForm'
 import Post from '../components/Post'
+import { useQueryClient } from 'react-query'
 
 const LandingPage = () => {
+	const queryClient = useQueryClient()
 	const { isLoading, isError, data } = useQuery(
 		'posts',
 		DotterDB_API.showPosts
 	)
+
+	const onSubmit = async data => {
+		if (data) {
+			const created_at = new Date().toLocaleString()
+			const postInfo = {
+				title: data.title,
+				content: data.content,
+				created_at: created_at,
+			}
+			await DotterDB_API.publishPost(postInfo)
+			queryClient.invalidateQueries('posts')
+		}
+	}
+
 	return (
 		<Container className='LandingPage'>
 			<h1>Welcome to my app</h1>
 
 			{isError && <p>An error has occurred</p>}
 
-			<ContentForm />
+			<ContentForm onSubmit={onSubmit} />
 
 			<div>
 				{data &&
