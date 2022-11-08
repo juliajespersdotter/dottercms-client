@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://localhost:3000/posts'
 
 /**
  * GET an endpoint
@@ -14,7 +14,7 @@ const get = async (endpoint, options) => {
 }
 
 const showPosts = () => {
-	return get(`${BASE_URL}/posts`)
+	return get(`${BASE_URL}`)
 }
 
 const showPost = id => {

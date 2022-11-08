@@ -1,13 +1,26 @@
 import { useQuery } from 'react-query'
+import { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
+import { useAuthContext } from '../contexts/AuthContext'
 import ContentForm from '../components/ContentForm'
 import Post from '../components/Post'
 import { useQueryClient } from 'react-query'
 
 const LandingPage = () => {
+	const { currentUser, login } = useAuthContext()
 	const queryClient = useQueryClient()
 	const { isLoading, isError, data } = useQuery('posts', Posts_API.showPosts)
+	console.log(currentUser)
+
+	useEffect(() => {
+		const storedData = JSON.parse(localStorage.getItem('userData'))
+		console.log(storedData)
+		if (storedData) {
+			console.log('login')
+			login(storedData.token)
+		}
+	}, [login])
 
 	const onSubmit = async data => {
 		if (data) {

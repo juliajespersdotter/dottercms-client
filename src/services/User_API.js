@@ -14,11 +14,12 @@ const get = async (endpoint, options) => {
 }
 
 const login = async data => {
-	await axios.post(`${BASE_URL}/login`, data)
+	const res = await axios.post(`${BASE_URL}/login`, data)
+	console.log(res.data)
+	return res.data
 }
 
 const register = async data => {
-	console.log('data in api', data)
 	await axios.post(`${BASE_URL}/register`, data)
 }
 

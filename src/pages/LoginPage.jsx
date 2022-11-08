@@ -1,17 +1,27 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../contexts/AuthContext'
+import User_API from '../services/User_API'
 import '../assets/scss/signup-login.scss'
 
 const LoginPage = () => {
+	const { login } = useAuthContext()
 	const {
 		register,
 		handleSubmit,
 		watch,
 		formState: { errors },
 	} = useForm()
+	const navigate = useNavigate()
 
-	const onSubmit = data => {
+	const onSubmit = async data => {
 		console.log(data)
+
+		const res = await login(data)
+		if (res.status === 'success') {
+			navigate('/')
+		}
 	}
 
 	return (
@@ -31,13 +41,13 @@ const LoginPage = () => {
 
 				<form className='login-form' onSubmit={handleSubmit(onSubmit)}>
 					<input
-						type='text'
+						type='email'
 						placeholder='Enter your email'
 						{...register('email')}
 						required
 					/>
 					<input
-						type='text'
+						type='password'
 						placeholder='Enter your password'
 						{...register('password')}
 						required
