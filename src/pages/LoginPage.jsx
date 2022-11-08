@@ -30,8 +30,18 @@ const LoginPage = () => {
 				<h2>Let's log you in quickly</h2>
 
 				<form className='login-form' onSubmit={handleSubmit(onSubmit)}>
-					<input type='text' placeholder='Enter your email' />
-					<input type='text' placeholder='Enter your password' />
+					<input
+						type='text'
+						placeholder='Enter your email'
+						{...register('email')}
+						required
+					/>
+					<input
+						type='text'
+						placeholder='Enter your password'
+						{...register('password')}
+						required
+					/>
 
 					<div className='d-flex justify-content-between align-items-center'>
 						<button className='button-primary' type='submit'>

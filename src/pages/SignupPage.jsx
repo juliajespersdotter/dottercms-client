@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import '../assets/scss/signup-login.scss'
 
@@ -9,8 +9,10 @@ const SignupPage = () => {
 		watch,
 		formState: { errors },
 	} = useForm()
+	const password = watch('password', false)
 
 	const onSubmit = data => {
+		console.log(password)
 		console.log(data)
 	}
 
@@ -27,13 +29,48 @@ const SignupPage = () => {
 			</div>
 			<div className='right-aligned-container'>
 				<h1>Welcome</h1>
-				<h2>Let's sign you in quickly</h2>
+				<h2>Let's sign you up quickly</h2>
 
 				<form className='login-form' onSubmit={handleSubmit(onSubmit)}>
-					<input type='text' placeholder='Enter your name' />
-					<input type='text' placeholder='Enter your email' />
-					<input type='text' placeholder='Enter your password' />
-					<input type='text' placeholder='Confirm password' />
+					<input
+						type='text'
+						placeholder='Enter your name'
+						{...register('name')}
+						required
+					/>
+					<input
+						type='text'
+						placeholder='Enter your email'
+						{...register('email')}
+						required
+					/>
+					<input
+						name='password'
+						type='password'
+						placeholder='Enter your password'
+						{...register('password', {
+							required: 'You must specify a password',
+							minLength: {
+								value: 6,
+								message:
+									'Password must have at least 6 characters',
+							},
+						})}
+					/>
+					{errors.password && <p>{errors.password.message}</p>}
+					<input
+						type='password'
+						placeholder='Confirm password'
+						name='password_confirm'
+						{...register('password_confirm', {
+							validate: value =>
+								value === password ||
+								'The passwords do not match',
+						})}
+					/>
+					{errors.password_confirm && (
+						<p>{errors.password_confirm.message}</p>
+					)}
 
 					<div className='d-flex justify-content-between align-items-center'>
 						<button className='button-primary' type='submit'>
