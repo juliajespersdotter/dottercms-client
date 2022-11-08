@@ -1,14 +1,14 @@
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import DotterDB_API from '../services/DotterDB_API'
+import Posts_API from '../services/Posts_API'
 import { useQueryClient } from 'react-query'
 
 const Post = ({ post }) => {
 	const queryClient = useQueryClient()
 
 	const deleteFunction = async () => {
-		await DotterDB_API.deletePost(post.id)
+		await Posts_API.deletePost(post.id)
 		queryClient.invalidateQueries(['post', post.id])
 		queryClient.invalidateQueries('posts')
 	}

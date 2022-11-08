@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import Container from 'react-bootstrap/Container'
-import DotterDB_API from '../services/DotterDB_API'
+import Posts_API from '../services/Posts_API'
 import Post from '../components/Post'
 import ContentForm from '../components/ContentForm'
 import { useQueryClient } from 'react-query'
@@ -11,7 +11,7 @@ const PostPage = () => {
 	const queryClient = useQueryClient()
 	const { postId } = useParams()
 	const { isLoading, isError, data } = useQuery(['post', postId], () =>
-		DotterDB_API.showPost(postId)
+		Posts_API.showPost(postId)
 	)
 
 	const onSubmit = async data => {
@@ -22,7 +22,7 @@ const PostPage = () => {
 				content: data.content,
 				updated_at: updated_at,
 			}
-			await DotterDB_API.updatePost(postId, postInfo)
+			await Posts_API.updatePost(postId, postInfo)
 			queryClient.invalidateQueries(['post', postId])
 			queryClient.invalidateQueries('posts')
 		}

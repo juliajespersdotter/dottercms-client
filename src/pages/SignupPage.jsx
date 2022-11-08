@@ -1,5 +1,6 @@
-import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
+import { useQuery } from 'react-query'
+import User_API from '../services/User_API'
 import '../assets/scss/signup-login.scss'
 
 const SignupPage = () => {
@@ -11,9 +12,12 @@ const SignupPage = () => {
 	} = useForm()
 	const password = watch('password', false)
 
-	const onSubmit = data => {
-		console.log(password)
-		console.log(data)
+	const onSubmit = async data => {
+		if (data) {
+			console.log(data)
+			await User_API.register(data)
+			// queryClient.invalidateQueries('posts')
+		}
 	}
 
 	return (
