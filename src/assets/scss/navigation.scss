@@ -2,6 +2,37 @@
 * Mobile First Styling
 **/
 
+.icon {
+	font-size: 2.5rem;
+	color: $accent-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 0.5rem;
+}
+
+.icon:hover {
+	color: $muted-color;
+}
+
+.link-text {
+	display: none;
+}
+
+#circle {
+	font-weight: bold;
+	background-color: $accent-color;
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $background-color;
+	font-size: 2rem;
+}
+
 .centered-container {
 	height: 10%;
 	position: fixed;
@@ -21,10 +52,12 @@
 	bottom: 0px;
 	width: 90%;
 	border: 2px solid $accent-color;
-	padding: 1rem;
+	padding: 0.5rem;
 	margin: 1rem;
 
 	a {
+		font-weight: 300;
+		color: white;
 		font-size: 1rem;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
@@ -33,11 +66,25 @@
 	.links {
 		width: 100%;
 		display: flex;
+		align-items: center;
 		justify-content: space-evenly;
 	}
 }
 
 @media screen and (min-width: 900px) {
+	.link-text {
+		display: block;
+	}
+
+	.link-text:hover {
+		color: $muted-color;
+	}
+
+	#circle {
+		width: 4rem;
+		height: 4rem;
+		padding: 2rem;
+	}
 	.centered-container {
 		width: 10%;
 		position: relative;
