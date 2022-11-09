@@ -3,7 +3,7 @@
 
 $background-color: #272727;
 $accent-color: #6eeb83;
-$muted-color: hsl(0deg 0% 65%);
+$muted-color: rgb(135, 133, 133);
 
 html {
 	scroll-behavior: smooth;
@@ -24,11 +24,20 @@ body {
 
 h1 {
 	font-family: 'DM Serif Display', serif;
+	color: $accent-color;
 }
 
 h2 {
 	font-family: 'Lexend Deca', sans-serif;
+	color: $muted-color;
+	font-size: 1em;
 	font-weight: 200;
+}
+
+p {
+	line-height: 1.5;
+	font-size: 1.3rem;
+	font-weight: 300;
 }
 
 .green {

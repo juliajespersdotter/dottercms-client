@@ -21,9 +21,6 @@
 
 #post-container {
 	height: 100%;
-	h1 {
-		color: $accent-color;
-	}
 
 	.post-links {
 		height: 10rem;
@@ -31,6 +28,8 @@
 
 	p {
 		margin-bottom: 2rem;
+		font-size: 1.2rem;
+		padding-top: 1rem;
 	}
 
 	a {
@@ -50,13 +49,52 @@
 	}
 }
 
-.header-container {
+.post-page {
+	width: 90%;
+	margin: 0 auto;
+	p::first-letter {
+		color: white;
+		font-weight: bold;
+		border-radius: 2px;
+		border: 1px solid $muted-color;
+		box-shadow: 3px 3px 0 $accent-color;
+		font-size: 4rem;
+		padding: 6px 3px;
+		margin-right: 0.8rem;
+		float: left;
+	}
+
+	p {
+		line-height: 1.5;
+		font-size: 1.3rem;
+	}
 }
 
+.header-container-post-page {
+	padding: 3rem 1rem 3rem 1rem;
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		width: 50%;
+		padding-top: 0.5rem;
+	}
+}
 @media screen and (min-width: 900px) {
+	.header-container-post-page {
+		h2 {
+			width: 30%;
+		}
+	}
 	.content-container {
 		height: 100vh;
 		margin-bottom: 0;
+	}
+
+	.post-content::first-letter {
+		initial-letter: 2;
 	}
 
 	#content-section {
@@ -65,5 +103,9 @@
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
+	}
+
+	.post-page {
+		width: 70%;
 	}
 }
