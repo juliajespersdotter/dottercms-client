@@ -45,6 +45,8 @@ const LandingPage = () => {
 				{/* <ContentForm onSubmit={onSubmit} /> */}
 
 				<div id='content-section'>
+					<hr className='border'></hr>
+					<h3 className='page-title'>Latest</h3>
 					{data &&
 						!isLoading &&
 						data.map(post => <Post key={post.id} post={post} />)}
