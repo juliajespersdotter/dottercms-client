@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage'
 import PostPage from './pages/PostPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
+import Navigation from './components/Navigation'
 
 function App() {
 	return (

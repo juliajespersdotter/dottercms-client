@@ -14,30 +14,36 @@ const Post = ({ post }) => {
 	}
 
 	return (
-		<Card className='mb-5 p-3'>
-			<Card.Title>{post.title}</Card.Title>
-			{post.created_at && (
-				<Card.Subtitle className='text-muted'>
-					Created: {new Date(post.created_at).toLocaleString()}
-				</Card.Subtitle>
-			)}
-			{post.updated_at && (
+		<div id='post-container'>
+			<div className='header-container'>
+				<h1>{post.title}</h1>
+				{post.created_at && (
+					<h2>
+						Created: {new Date(post.created_at).toLocaleString()}
+					</h2>
+				)}
+			</div>
+			{/* {post.updated_at && (
 				<Card.Subtitle className='text-muted'>
 					Updated: {new Date(post.updated_at).toLocaleString()}
 				</Card.Subtitle>
-			)}
-			<Card.Body>
-				<Card.Text>{post.content}</Card.Text>
-			</Card.Body>
+			)} */}
+			<div>
+				<p>{post.content}</p>
+			</div>
 
-			<Link className='w-25 mt-3' to={`/${post.id}`}>
-				View
-			</Link>
+			<div className='post-links'>
+				<Link to={`/${post.id}`}>View</Link>
 
-			<Link variant='danger' onClick={deleteFunction}>
-				Delete
-			</Link>
-		</Card>
+				<Link
+					variant='danger'
+					className='right-button'
+					onClick={deleteFunction}
+				>
+					Delete
+				</Link>
+			</div>
+		</div>
 	)
 }
 

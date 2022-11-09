@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useQuery } from 'react-query'
 import User_API from '../services/User_API'
-import '../assets/scss/signup-login.scss'
 
 const SignupPage = () => {
 	const {

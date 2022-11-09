@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useAuthContext } from '../contexts/AuthContext'
 import User_API from '../services/User_API'
-import '../assets/scss/signup-login.scss'
 
 const LoginPage = () => {
 	const { login } = useAuthContext()

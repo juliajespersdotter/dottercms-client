@@ -1,0 +1,39 @@
+.content-container {
+	width: 90%;
+	height: 100vh;
+}
+
+#content-section {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 7rem;
+	height: 100vh;
+}
+
+#post-container {
+	h1 {
+		color: $accent-color;
+	}
+
+	.post-links {
+	}
+
+	p {
+		margin-bottom: 2rem;
+	}
+
+	a {
+		border: 2px solid $accent-color;
+		border-radius: 5rem;
+		padding: 1rem;
+		width: 2rem;
+	}
+
+	.right-button {
+		margin-left: 1rem;
+	}
+}
+
+.header-container {
+}

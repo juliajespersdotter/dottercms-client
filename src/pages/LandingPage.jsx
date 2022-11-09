@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { useEffect } from 'react'
+import Navigation from '../components/Navigation'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import { useAuthContext } from '../contexts/AuthContext'
@@ -11,14 +12,14 @@ const LandingPage = () => {
 	const { currentUser, login } = useAuthContext()
 	const queryClient = useQueryClient()
 	const { isLoading, isError, data } = useQuery('posts', Posts_API.showPosts)
-	console.log(currentUser)
+	// console.log(currentUser)
 
 	useEffect(() => {
 		const storedData = JSON.parse(localStorage.getItem('userData'))
-		console.log(storedData)
+		// console.log(storedData)
 		if (storedData) {
-			console.log('login')
-			login(storedData.token)
+			// login(storedData.token)
+			// login with access token
 		}
 	}, [login])
 
@@ -36,19 +37,20 @@ const LandingPage = () => {
 	}
 
 	return (
-		<Container className='LandingPage'>
-			<h1>Welcome to my app</h1>
+		<>
+			<Navigation />
+			<Container className='content-container'>
+				{isError && <p>An error has occurred</p>}
 
-			{isError && <p>An error has occurred</p>}
+				{/* <ContentForm onSubmit={onSubmit} /> */}
 
-			<ContentForm onSubmit={onSubmit} />
-
-			<div>
-				{data &&
-					!isLoading &&
-					data.map(post => <Post key={post.id} post={post} />)}
-			</div>
-		</Container>
+				<div id='content-section'>
+					{data &&
+						!isLoading &&
+						data.map(post => <Post key={post.id} post={post} />)}
+				</div>
+			</Container>
+		</>
 	)
 }
 

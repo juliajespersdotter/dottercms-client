@@ -19,9 +19,7 @@ const AuthContextProvider = ({ children }) => {
 		const res = await User_API.login(data)
 		if (res.status === 'success') {
 			setCurrentUser(res.data)
-			console.log(res.data)
 			setToken(res.data.access_token)
-			console.log(token)
 
 			localStorage.setItem(
 				'userData',
