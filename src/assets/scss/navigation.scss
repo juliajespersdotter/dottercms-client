@@ -40,12 +40,13 @@
 @media screen and (min-width: 900px) {
 	.centered-container {
 		width: 10%;
-		display: block;
+		position: relative;
+		display: hidden;
 	}
 	#navbar {
-		position: relative;
-		height: 100vh;
-		width: 100%;
+		left: 0;
+		height: 100%;
+		width: 10%;
 		border: 0;
 		border-right: 3px solid $accent-color;
 		display: flex;
@@ -56,13 +57,20 @@
 		a {
 			font-size: 1rem;
 		}
-	}
+		.links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			flex-direction: column;
 
-	.links {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 100vh;
-		flex-direction: column;
+			a {
+				padding-top: 2rem;
+			}
+
+			.alone-link {
+				padding-top: 15rem;
+			}
+		}
 	}
 }

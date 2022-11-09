@@ -8,7 +8,9 @@ const Navigation = () => {
 					<a href=''>User</a>
 					<a href=''>Search</a>
 					<a href=''>Trending</a>
-					<a href=''>Create</a>
+					<a className='alone-link' href=''>
+						Create
+					</a>
 				</div>
 			</nav>
 		</div>
