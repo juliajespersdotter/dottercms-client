@@ -52,14 +52,14 @@ const LoginPage = () => {
 						required
 					/>
 
-					<div className='d-flex justify-content-between align-items-center'>
+					<div className='button-container'>
 						<button className='button-primary' type='submit'>
 							LOGIN
 						</button>
-						<div className='d-flex align-items-center flex-wrap'>
+						<div className='form-link'>
 							don't have an account
 							<span className='green'>?</span>
-							<div className='w-50 green'>
+							<div className='green'>
 								<a href='/signup'>sign up</a>
 							</div>
 						</div>

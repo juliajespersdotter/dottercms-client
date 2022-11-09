@@ -75,14 +75,14 @@ const SignupPage = () => {
 						<p>{errors.password_confirm.message}</p>
 					)}
 
-					<div className='d-flex justify-content-between align-items-center'>
+					<div className='button-container'>
 						<button className='button-primary' type='submit'>
 							SUBMIT
 						</button>
-						<div className='d-flex align-items-center flex-wrap'>
+						<div className='form-link'>
 							already have an account
 							<span className='green'>?</span>
-							<div className='w-50 green'>
+							<div className='green'>
 								<a href='/login'>log-in</a>
 							</div>
 						</div>
