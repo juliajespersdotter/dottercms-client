@@ -1,31 +1,68 @@
-#navbar {
-	height: 100vh;
-	width: 10%;
-	border-right: 4px solid $accent-color;
+/**
+* Mobile First Styling
+**/
+
+.centered-container {
+	height: 10%;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	background-color: $background-color;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+}
+
+#navbar {
+	background-color: $background-color;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0px;
+	width: 90%;
+	border: 2px solid $accent-color;
+	padding: 1rem;
+	margin: 1rem;
 
 	a {
 		font-size: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.links {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
 	}
 }
 
-.links {
-	display: flex;
-	justify-content: space-between;
-	height: 70vh;
-	flex-direction: column;
-}
+@media screen and (min-width: 900px) {
+	.centered-container {
+		width: 10%;
+		display: block;
+	}
+	#navbar {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		border: 0;
+		border-right: 3px solid $accent-color;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
 
-.link-group {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 10rem;
-	a {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		a {
+			font-size: 1rem;
+		}
+	}
+
+	.links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100vh;
+		flex-direction: column;
 	}
 }

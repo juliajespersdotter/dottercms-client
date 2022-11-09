@@ -4,7 +4,6 @@ import { useQuery } from 'react-query'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import Post from '../components/Post'
-import ContentForm from '../components/ContentForm'
 import { useQueryClient } from 'react-query'
 
 const PostPage = () => {
@@ -34,8 +33,6 @@ const PostPage = () => {
 			<div>
 				{data && !isLoading && <Post key={data.id} post={data} />}
 			</div>
-
-			<ContentForm onSubmit={onSubmit} />
 		</Container>
 	)
 }

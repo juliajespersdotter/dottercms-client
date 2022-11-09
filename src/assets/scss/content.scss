@@ -1,22 +1,33 @@
+/**
+*	Mobile First Styling
+**/
+
 .content-container {
 	width: 90%;
-	height: 100vh;
+	position: relative;
+	margin-bottom: 10%;
+	height: 100%;
 }
 
 #content-section {
+	min-height: 100vh;
+	overflow: hidden;
+	width: 90%;
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	padding-top: 7rem;
-	height: 100vh;
 }
 
 #post-container {
+	height: 100%;
 	h1 {
 		color: $accent-color;
 	}
 
 	.post-links {
+		height: 10rem;
 	}
 
 	p {
@@ -30,10 +41,26 @@
 		width: 2rem;
 	}
 
+	a:hover {
+		background-color: white;
+		color: $accent-color;
+	}
+
 	.right-button {
 		margin-left: 1rem;
 	}
 }
 
 .header-container {
+}
+
+@media screen and (min-width: 900px) {
+	.content-container {
+		height: 100vh;
+	}
+
+	#content-section {
+		width: 80%;
+		margin: 0 auto;
+	}
 }
