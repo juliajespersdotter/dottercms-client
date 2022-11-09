@@ -21,11 +21,13 @@
 
 #post-container {
 	height: 100%;
+	display: flex;
+	padding: 1rem;
+	gap: 20px;
 
 	.post-links {
 		height: 10rem;
 	}
-
 	p {
 		margin-bottom: 2rem;
 		font-size: 1.2rem;
@@ -83,9 +85,31 @@
 	}
 }
 @media screen and (min-width: 900px) {
+	.post-info {
+		width: 5rem;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		// justify-content: space-evenly;
+		// height: 100%;
+
+		.date {
+			width: 100%;
+			text-align: right;
+			font-size: 2rem;
+			color: white;
+			margin-top: 0.5rem;
+			font-weight: bold;
+		}
+
+		.user-info {
+			margin-top: 5rem;
+			transform: rotate(-90deg);
+		}
+	}
 	.header-container-post-page {
 		h2 {
-			width: 30%;
+			width: 24%;
 		}
 	}
 	.content-container {

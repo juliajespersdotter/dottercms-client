@@ -33,6 +33,10 @@
 	font-size: 2rem;
 }
 
+#circle:hover {
+	background-color: $muted-color;
+}
+
 .centered-container {
 	height: 10%;
 	position: fixed;

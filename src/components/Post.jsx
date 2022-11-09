@@ -1,11 +1,11 @@
-import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
+import moment from 'moment'
 import Posts_API from '../services/Posts_API'
 import { useQueryClient } from 'react-query'
 
 const Post = ({ post }) => {
 	const queryClient = useQueryClient()
+	const date = new Date(post.created_at).toLocaleDateString()
 
 	const deleteFunction = async () => {
 		await Posts_API.deletePost(post.id)
@@ -15,33 +15,30 @@ const Post = ({ post }) => {
 
 	return (
 		<div id='post-container'>
+			<div className='post-info'>
+				{post.created_at && (
+					<h2 className='date'> {moment(date).format('D MMM')}</h2>
+				)}
+
+				<h2 className='user-info'>@randomuser</h2>
+			</div>
 			<div className='header-container'>
 				<h1>{post.title}</h1>
-				{post.created_at && (
-					<h2>
-						Created: {new Date(post.created_at).toLocaleString()}
-					</h2>
-				)}
-			</div>
-			{/* {post.updated_at && (
-				<Card.Subtitle className='text-muted'>
-					Updated: {new Date(post.updated_at).toLocaleString()}
-				</Card.Subtitle>
-			)} */}
-			<div>
-				<p>{post.content}</p>
-			</div>
+				<div>
+					<p>{post.content}</p>
+				</div>
 
-			<div className='post-links'>
-				<Link to={`/${post.id}`}>View</Link>
+				<div className='post-links'>
+					<Link to={`/${post.id}`}>View</Link>
 
-				<Link
-					variant='danger'
-					className='right-button'
-					onClick={deleteFunction}
-				>
-					Delete
-				</Link>
+					<Link
+						variant='danger'
+						className='right-button'
+						onClick={deleteFunction}
+					>
+						Delete
+					</Link>
+				</div>
 			</div>
 		</div>
 	)

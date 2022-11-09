@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import moment from 'moment'
 import { useQuery } from 'react-query'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
@@ -37,7 +38,11 @@ const PostPage = () => {
 						{post.created_at && (
 							<h2>
 								written by @randomuser on{' '}
-								{new Date(post.created_at).toLocaleString()}
+								{moment(
+									new Date(
+										post.created_at
+									).toLocaleDateString()
+								).format('D MMM YY')}
 							</h2>
 						)}
 					</div>

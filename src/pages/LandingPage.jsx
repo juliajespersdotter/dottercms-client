@@ -38,7 +38,7 @@ const LandingPage = () => {
 
 	return (
 		<>
-			<Navigation />
+			{/* <Navigation /> */}
 			<Container className='content-container'>
 				{isError && <p>An error has occurred</p>}
 
