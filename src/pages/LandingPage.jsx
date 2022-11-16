@@ -1,16 +1,12 @@
 import { useQuery } from 'react-query'
 import { useEffect } from 'react'
-import Navigation from '../components/Navigation'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import { useAuthContext } from '../contexts/AuthContext'
-import ContentForm from '../components/CreatePost'
 import Post from '../components/Post'
-import { useQueryClient } from 'react-query'
 
 const LandingPage = () => {
 	const { currentUser, login } = useAuthContext()
-	const queryClient = useQueryClient()
 	const { isLoading, isError, data } = useQuery('posts', Posts_API.showPosts)
 	// console.log(currentUser)
 
@@ -22,27 +18,10 @@ const LandingPage = () => {
 			// login with access token
 		}
 	}, [login])
-
-	const onSubmit = async data => {
-		if (data) {
-			const created_at = new Date().toLocaleString()
-			const postInfo = {
-				title: data.title,
-				content: data.content,
-				created_at: created_at,
-			}
-			await Posts_API.publishPost(postInfo)
-			queryClient.invalidateQueries('posts')
-		}
-	}
-
 	return (
 		<>
-			{/* <Navigation /> */}
 			<Container className='content-container'>
 				{isError && <p>An error has occurred</p>}
-
-				{/* <ContentForm onSubmit={onSubmit} /> */}
 
 				<div id='content-section'>
 					<h3 className='page-title'>Latest</h3>
