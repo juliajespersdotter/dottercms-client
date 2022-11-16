@@ -6,6 +6,7 @@ import { useQueryClient } from 'react-query'
 const Post = ({ post }) => {
 	const queryClient = useQueryClient()
 	const date = new Date(post.created_at).toLocaleDateString()
+	const partialpost = post.content.substring(0, 600)
 
 	const deleteFunction = async () => {
 		await Posts_API.deletePost(post.id)
@@ -28,7 +29,13 @@ const Post = ({ post }) => {
 				</div>
 				<div id='content'>
 					<h1>{post.title}</h1>
-					<p>{post.content}</p>
+					<p>
+						{partialpost}
+						<a href={`/${post.id}`} id='partialpost-link'>
+							{' '}
+							...Read more
+						</a>
+					</p>
 					<div className='post-links'>
 						<Link to={`/${post.id}`}>View</Link>
 

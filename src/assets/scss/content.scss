@@ -54,6 +54,18 @@
 	.post-links {
 		margin-top: 3rem;
 		height: 5rem;
+
+		a {
+			border: 2px solid $accent-color;
+			border-radius: 5rem;
+			padding: 1rem;
+			width: 2rem;
+		}
+
+		a:hover {
+			background-color: white;
+			color: $accent-color;
+		}
 	}
 
 	.post-info {
@@ -82,18 +94,6 @@
 		margin-bottom: 2rem;
 		font-size: 1.2rem;
 		padding-top: 1rem;
-	}
-
-	a {
-		border: 2px solid $accent-color;
-		border-radius: 5rem;
-		padding: 1rem;
-		width: 2rem;
-	}
-
-	a:hover {
-		background-color: white;
-		color: $accent-color;
 	}
 
 	.right-button {
@@ -144,6 +144,12 @@
 
 		#content {
 			width: 90%;
+
+			#partialpost-link {
+				border: none;
+				padding: none;
+				width: none;
+			}
 		}
 
 		.post-info {

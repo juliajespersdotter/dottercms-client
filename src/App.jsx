@@ -38,7 +38,14 @@ function App() {
 						</>
 					}
 				/>
-				<Route path='/:postId' element={<PostPage />} />
+				<Route
+					path='/:postId'
+					element={
+						<>
+							<Navigation /> <PostPage />
+						</>
+					}
+				/>
 				{/* <Route path='*' element={<NotFound />} /> */}
 			</Routes>
 		</div>
