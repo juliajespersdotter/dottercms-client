@@ -13,7 +13,6 @@ const SignupPage = () => {
 
 	const onSubmit = async data => {
 		if (data) {
-			console.log(data)
 			await User_API.register(data)
 			// queryClient.invalidateQueries('posts')
 		}
@@ -37,7 +36,7 @@ const SignupPage = () => {
 				<form className='login-form' onSubmit={handleSubmit(onSubmit)}>
 					<input
 						type='text'
-						placeholder='Enter your name'
+						placeholder='Enter a username'
 						{...register('name')}
 						required
 					/>

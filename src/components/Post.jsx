@@ -15,30 +15,32 @@ const Post = ({ post }) => {
 
 	return (
 		<div id='post-container'>
-			<div className='post-info'>
-				{post.created_at && (
-					<h2 className='date'> {moment(date).format('D MMM')}</h2>
-				)}
-
-				<h2 className='user-info'>@randomuser</h2>
-			</div>
 			<div className='header-container'>
-				<h1>{post.title}</h1>
+				<div className='post-info'>
+					{post.created_at && (
+						<h2 className='date'>
+							{' '}
+							{moment(date).format('D MMM')}
+						</h2>
+					)}
+
+					<h2 className='user-info'>@randomuser</h2>
+				</div>
 				<div>
+					<h1>{post.title}</h1>
 					<p>{post.content}</p>
 				</div>
+			</div>
+			<div className='post-links'>
+				<Link to={`/${post.id}`}>View</Link>
 
-				<div className='post-links'>
-					<Link to={`/${post.id}`}>View</Link>
-
-					<Link
-						variant='danger'
-						className='right-button'
-						onClick={deleteFunction}
-					>
-						Delete
-					</Link>
-				</div>
+				<Link
+					variant='danger'
+					className='right-button'
+					onClick={deleteFunction}
+				>
+					Delete
+				</Link>
 			</div>
 		</div>
 	)

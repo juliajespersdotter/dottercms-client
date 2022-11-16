@@ -11,18 +11,24 @@ const Navigation = () => {
 		<div className='centered-container'>
 			<nav id='navbar'>
 				<div className='links'>
-					<a href=''>
+					<a href='/profile'>
 						<div id='circle'>
 							<span>J</span>
 						</div>
 					</a>
-					<a href=''>
+					<a href='/search'>
 						<div className='icon'>
 							<FontAwesomeIcon icon={faMagnifyingGlass} />
 						</div>
 						<div className='link-text'>search</div>
 					</a>
-					<a href=''>
+					<a href='/'>
+						<div className='icon'>
+							<FontAwesomeIcon icon={faArrowTrendUp} />
+						</div>
+						<div className='link-text'>latest</div>
+					</a>
+					<a href='/trending'>
 						<div className='icon'>
 							<FontAwesomeIcon icon={faArrowTrendUp} />
 						</div>
