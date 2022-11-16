@@ -30,11 +30,17 @@ const Post = ({ post }) => {
 				<div id='content'>
 					<h1>{post.title}</h1>
 					<p>
-						{partialpost}
-						<a href={`/${post.id}`} id='partialpost-link'>
-							{' '}
-							...Read more
-						</a>
+						{post.content.length > 600 ? (
+							<>
+								{partialpost}
+								<a href={`/${post.id}`} id='partialpost-link'>
+									{' '}
+									...Read more
+								</a>
+							</>
+						) : (
+							<>{post.content}</>
+						)}
 					</p>
 				</div>
 				<div className='post-links'>
