@@ -139,6 +139,11 @@
 		// flex-direction: row-reverse;
 		.header-container {
 			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#content {
+			width: 90%;
 		}
 
 		.post-info {
@@ -162,6 +167,10 @@
 			.user-info {
 				margin-top: 5rem;
 				transform: rotate(-90deg);
+			}
+
+			.post-links {
+				width: 100%;
 			}
 		}
 	}

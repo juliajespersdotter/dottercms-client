@@ -26,21 +26,21 @@ const Post = ({ post }) => {
 
 					<h2 className='user-info'>@randomuser</h2>
 				</div>
-				<div>
+				<div id='content'>
 					<h1>{post.title}</h1>
 					<p>{post.content}</p>
-				</div>
-			</div>
-			<div className='post-links'>
-				<Link to={`/${post.id}`}>View</Link>
+					<div className='post-links'>
+						<Link to={`/${post.id}`}>View</Link>
 
-				<Link
-					variant='danger'
-					className='right-button'
-					onClick={deleteFunction}
-				>
-					Delete
-				</Link>
+						<Link
+							variant='danger'
+							className='right-button'
+							onClick={deleteFunction}
+						>
+							Delete
+						</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	)
