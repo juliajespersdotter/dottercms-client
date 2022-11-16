@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query'
 import { useEffect } from 'react'
-import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import { useAuthContext } from '../contexts/AuthContext'
 import Post from '../components/Post'
@@ -20,7 +19,7 @@ const LandingPage = () => {
 	}, [login])
 	return (
 		<>
-			<Container className='content-container'>
+			<container className='content-container'>
 				{isError && <p>An error has occurred</p>}
 
 				<div id='content-section'>
@@ -29,7 +28,7 @@ const LandingPage = () => {
 						!isLoading &&
 						data.map(post => <Post key={post.id} post={post} />)}
 				</div>
-			</Container>
+			</container>
 		</>
 	)
 }

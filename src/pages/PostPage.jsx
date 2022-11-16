@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import moment from 'moment'
 import { useQuery } from 'react-query'
-import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import { useQueryClient } from 'react-query'
 
@@ -30,7 +29,7 @@ const PostPage = () => {
 	}
 
 	return (
-		<Container className='post-page'>
+		<container className='post-page'>
 			{post && (
 				<>
 					<div className='header-container-post-page'>
@@ -53,7 +52,7 @@ const PostPage = () => {
 			</div> */}
 				</>
 			)}
-		</Container>
+		</container>
 	)
 }
 

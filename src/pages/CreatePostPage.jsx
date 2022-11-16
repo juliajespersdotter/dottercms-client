@@ -1,5 +1,4 @@
 import React from 'react'
-import Container from 'react-bootstrap/esm/Container'
 import CreatePost from '../components/CreatePost'
 import { useQueryClient } from 'react-query'
 import Posts_API from '../services/Posts_API'
@@ -21,10 +20,10 @@ const CreatePostPage = () => {
 	}
 
 	return (
-		<Container className='content-container'>
+		<container className='content-container'>
 			<h1 className='createpost-header'>Create new post</h1>
 			<CreatePost onSubmit={onSubmit} />
-		</Container>
+		</container>
 	)
 }
 
