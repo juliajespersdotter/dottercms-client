@@ -36,17 +36,17 @@ const Post = ({ post }) => {
 							...Read more
 						</a>
 					</p>
-					<div className='post-links'>
-						<Link to={`/${post.id}`}>View</Link>
+				</div>
+				<div className='post-links'>
+					<Link to={`/${post.id}`}>View</Link>
 
-						<Link
-							variant='danger'
-							className='right-button'
-							onClick={deleteFunction}
-						>
-							Delete
-						</Link>
-					</div>
+					<Link
+						variant='danger'
+						className='right-button'
+						onClick={deleteFunction}
+					>
+						Delete
+					</Link>
 				</div>
 			</div>
 		</div>
