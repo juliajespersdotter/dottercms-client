@@ -1,0 +1,71 @@
+.createpost-header {
+	width: 100%;
+	text-align: center;
+	padding: 2rem;
+	font-size: 2rem;
+}
+
+.createpost-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 90%;
+	height: 100vh;
+	margin: 0 auto;
+
+	label {
+		color: $muted-color;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+
+	div {
+		display: flex;
+		margin-bottom: 2rem;
+	}
+
+	#title-container {
+		flex-direction: column;
+
+		input {
+			width: 20rem;
+			padding: 1rem;
+		}
+	}
+
+	#content-container {
+		flex-direction: column;
+
+		textarea {
+			width: 20rem;
+			height: 15rem;
+			padding: 1rem;
+		}
+	}
+
+	#checkbox-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 2rem;
+		align-items: center;
+		justify-content: flex-start;
+
+		label {
+			margin: 0;
+		}
+
+		input {
+			padding: 1rem;
+			margin-right: 1rem;
+		}
+	}
+
+	button {
+		font-size: 1.5rem;
+		width: 12rem;
+		padding: 1rem;
+		margin-top: 3rem;
+	}
+}

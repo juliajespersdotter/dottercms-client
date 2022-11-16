@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation'
 import Container from 'react-bootstrap/Container'
 import Posts_API from '../services/Posts_API'
 import { useAuthContext } from '../contexts/AuthContext'
-import ContentForm from '../components/ContentForm'
+import ContentForm from '../components/CreatePost'
 import Post from '../components/Post'
 import { useQueryClient } from 'react-query'
 
@@ -45,7 +45,6 @@ const LandingPage = () => {
 				{/* <ContentForm onSubmit={onSubmit} /> */}
 
 				<div id='content-section'>
-					<hr className='border'></hr>
 					<h3 className='page-title'>Latest</h3>
 					{data &&
 						!isLoading &&

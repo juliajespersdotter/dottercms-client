@@ -28,7 +28,7 @@ const Navigation = () => {
 						</div>
 						<div className='link-text'>trending</div>
 					</a>
-					<a className='alone-link' href=''>
+					<a className='alone-link' href='/create'>
 						<div className='icon'>
 							<FontAwesomeIcon icon={faCirclePlus} />
 						</div>
