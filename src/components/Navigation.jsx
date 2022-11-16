@@ -4,6 +4,7 @@ import {
 	faMagnifyingGlass,
 	faArrowTrendUp,
 	faCirclePlus,
+	faBullhorn,
 } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
@@ -24,7 +25,7 @@ const Navigation = () => {
 					</a>
 					<a href='/'>
 						<div className='icon'>
-							<FontAwesomeIcon icon={faArrowTrendUp} />
+							<FontAwesomeIcon icon={faBullhorn} />
 						</div>
 						<div className='link-text'>latest</div>
 					</a>

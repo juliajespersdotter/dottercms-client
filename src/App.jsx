@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import CreatePostPage from './pages/CreatePostPage'
 import Navigation from './components/Navigation'
+import TrendingPage from './pages/TrendingPage'
 
 function App() {
 	return (
@@ -26,6 +27,14 @@ function App() {
 					element={
 						<>
 							<Navigation /> <CreatePostPage />
+						</>
+					}
+				/>
+				<Route
+					path='/trending'
+					element={
+						<>
+							<Navigation /> <TrendingPage />
 						</>
 					}
 				/>
